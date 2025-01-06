@@ -1,24 +1,72 @@
-Problem Statement:
-Write a function `find_highest_scorer(scores)` that takes a dictionary `scores` where keys are student names and values are their scores. The function should return the name of the student with the highest score. If there is a tie, return the name that comes first alphabetically.
+---
+title: Manipulate Data
+tags: ['array','sorting']
+---
 
-Solution:
-def find_highest_scorer(scores):
-    if not scores:
-        return None
-    max_score = max(scores.values())
-    highest_scorers = [name for name, score in scores.items() if score == max_score]
-    return sorted(highest_scorers)[0]
+# Problem Statement
 
-Public Test Cases:
-Input: {'Alice': 85, 'Bob': 90, 'Charlie': 90}
-Output: 'Bob'
+Given a dictionary d with keys of data structures int , float, set , list and str.
+Modify the given data structures in the dict using an function process_data as following:
+1. int -> Do an square of the given integer
+2. float -> trunicate the float
+3. str -> Reverse the string
+4. list -> Convert it into the sum of all integers in list
+5. set -> Find the max element in the set and replace it as value
 
-Input: {}
-Output: None
+# Solution
 
-Private Test Cases:
-Input: {'David': 95, 'Eva': 85, 'Frank': 95}
-Output: 'David'
+py3 test.py -r 'python test.py'
+<template>
+def process_data(d:dict) -> dict:
+    <los>...</los>
+    <sol>
+    d['int'] = d['int']**2
+    d['float'] = int(d['float'])
+    d['str'] = d['str'][::-1]
+    d['list'] = sum(d['list'])
+    d['set'] = max(d['set'])
+    return d</sol>
 
-Input: {'Anna': 100}
-Output: 'Anna'
+</template>
+<suffix_invisible>
+{% include './function_type_and_modify_check_suffix.py.jinja' %}
+</suffix_invisible>
+
+
+# Public Test Cases
+
+## Input 1
+
+
+d = {'int' : 2 , 'float' : 8.2 , 'str' : "hem" , 'list' : [1,2,4,5] , 'set' : {1,8,9} }
+is_equal(
+process_data(d),
+{'int' : 4 , 'float' : 8 , 'str' : "meh" , 'list' : 12 , 'set' : 9 }    
+)
+
+
+## Output 1
+
+
+{'int' : 4 , 'float' : 8 , 'str' : "meh" , 'list' : 12 , 'set' : 9 } 
+
+
+# Private Test Cases
+
+## Input 1
+
+
+d = {'int' : 2 , 'float' : 8.2 , 'str' : "hem" , 'list' : [1,2,4,5] , 'set' : {1,8,9} }
+is_equal(
+process_data(d),
+{'int' : 4 , 'float' : 8 , 'str' : "meh" , 'list' : 12 , 'set' : 9 }    
+)
+
+
+## Output 1
+
+
+{'int' : 4 , 'float' : 8 , 'str' : "meh" , 'list' : 12 , 'set' : 9 } 
+
+
+
