@@ -1,0 +1,24 @@
+Problem Statement:
+Write a function `find_highest_scorer(scores)` that takes a dictionary `scores` where keys are student names and values are their scores. The function should return the name of the student with the highest score. If there is a tie, return the name that comes first alphabetically.
+
+Solution:
+def find_highest_scorer(scores):
+    if not scores:
+        return None
+    max_score = max(scores.values())
+    highest_scorers = [name for name, score in scores.items() if score == max_score]
+    return sorted(highest_scorers)[0]
+
+Public Test Cases:
+Input: {'Alice': 85, 'Bob': 90, 'Charlie': 90}
+Output: 'Bob'
+
+Input: {}
+Output: None
+
+Private Test Cases:
+Input: {'David': 95, 'Eva': 85, 'Frank': 95}
+Output: 'David'
+
+Input: {'Anna': 100}
+Output: 'Anna'
