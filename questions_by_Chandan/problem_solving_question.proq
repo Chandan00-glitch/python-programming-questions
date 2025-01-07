@@ -15,6 +15,10 @@ Modify the given data structures in the dictionary using a function `process_dat
 
 # Solution
 
+```py3 test.py -r 'python test.py'
+<prefix>
+# some prefix   
+</prefix>
 <template>
 def process_data(d: dict) -> dict:
     <los>...</los>
@@ -25,7 +29,15 @@ def process_data(d: dict) -> dict:
     d['list'] = sum(d['list'])
     d['set'] = max(d['set'])
     return d</sol>
+    test = <los>...</los><sol>'test'</sol> #tests
 </template>
+<suffix>
+# some suffix
+</suffix>
+<suffix_invisible>
+{% include '../function_type_and_modify_check_suffix.py.jinja' %}
+</suffix_invisible>
+```
 
 # Public Test Cases
 
