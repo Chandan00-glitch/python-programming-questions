@@ -1,0 +1,15 @@
+---
+title: Test Question
+tags: ['basic']
+---
+# Problem Statement
+Given a number, return its square.
+# Solution
+<template>
+def square(n: int) -> int:
+    return n * n
+</template>
+# Public Test Cases
+## Input 1
+n = 4
+is_equal(square(n), 16)
